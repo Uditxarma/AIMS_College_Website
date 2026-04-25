@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Cinzel:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 222 42% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 42% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 42% 17%;
+
+    --primary: 214 60% 10%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 52% 54%;
+    --secondary-foreground: 214 60% 10%;
+
+    --muted: 220 20% 95%;
+    --muted-foreground: 222 20% 46%;
+
+    --accent: 40 78% 72%;
+    --accent-foreground: 214 60% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 43 52% 54%;
+
+    --radius: 0.5rem;
+
+    --gold: 43 52% 54%;
+    --gold-light: 40 78% 72%;
+    --navy: 214 60% 10%;
+    --navy-light: 214 40% 20%;
+    --surface: 220 33% 98%;
+
+    --sidebar-background: 214 60% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 43 52% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 40% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 40% 20%;
+    --sidebar-ring: 43 52% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .gold-divider {
+    @apply flex items-center justify-center gap-3 my-8;
+  }
+
+  .gold-divider::before,
+  .gold-divider::after {
+    content: '';
+    @apply h-px flex-1 bg-gradient-to-r from-transparent via-secondary to-transparent;
+  }
+
+  .gold-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gold-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(40 78% 72% / 0.3), transparent);
+    transition: left 0.5s;
+  }
+
+  .gold-shimmer:hover::after {
+    left: 100%;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-secondary/20 shadow-lg;
+  }
+
+  .navy-gradient {
+    background: linear-gradient(135deg, hsl(214 60% 10%) 0%, hsl(214 40% 20%) 100%);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(43 52% 54%) 0%, hsl(40 78% 72%) 100%);
+  }
+
+  .section-heading {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary tracking-tight;
+  }
+
+  .gold-underline {
+    @apply relative inline-block;
+  }
+
+  .gold-underline::after {
+    content: '';
+    @apply absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-0.5 bg-secondary rounded-full;
+  }
+
+  .card-gold-border {
+    @apply relative overflow-hidden;
+  }
+
+  .card-gold-border::before {
+    content: '';
+    @apply absolute left-0 top-0 w-1 h-0 bg-secondary transition-all duration-300;
+  }
+
+  .card-gold-border:hover::before {
+    @apply h-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Counter animation placeholder */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Geometric pattern background */
+.geo-pattern {
+  background-image: 
+    linear-gradient(30deg, hsl(43 52% 54% / 0.03) 12%, transparent 12.5%, transparent 87%, hsl(43 52% 54% / 0.03) 87.5%),
+    linear-gradient(150deg, hsl(43 52% 54% / 0.03) 12%, transparent 12.5%, transparent 87%, hsl(43 52% 54% / 0.03) 87.5%),
+    linear-gradient(30deg, hsl(43 52% 54% / 0.03) 12%, transparent 12.5%, transparent 87%, hsl(43 52% 54% / 0.03) 87.5%),
+    linear-gradient(150deg, hsl(43 52% 54% / 0.03) 12%, transparent 12.5%, transparent 87%, hsl(43 52% 54% / 0.03) 87.5%);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+}
