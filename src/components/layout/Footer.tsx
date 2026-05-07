@@ -11,7 +11,7 @@ const Footer = () => (
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div>
           <h3 className="font-display text-2xl font-bold text-secondary-foreground">Ready to Begin Your Journey?</h3>
-          <p className="text-secondary-foreground/70 font-body text-sm">Admissions are open for 2025–26. Limited seats available.</p>
+          <p className="text-secondary-foreground/70 font-body text-sm">Admissions are open for 2026–27. Limited seats available.</p>
         </div>
         <Link to="/admissions">
           <Button variant="navy" size="lg" className="rounded-lg whitespace-nowrap">

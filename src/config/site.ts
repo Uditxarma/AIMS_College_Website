@@ -21,8 +21,8 @@ export const site = {
     headline: "Shape Your Future at AIMS",
     sub: "Empowering youth with practical education, a global outlook, and ethical leadership.",
   },
-  announcement: "Admissions Open 2025–26 | Apply before 31 August",
-  googleSheetsUrl: "https://script.google.com/macros/s/AKfycbymlx5Ha2zoRRd1Xzp9-RAuZ91gejX7HbIEFm1TXnk1i-1Ru7mOEcRHBO0VEBEAuidMsA/exec",
+  announcement: "Admissions Open 2026–27 | Apply before 31 August",
+  googleSheetsUrl: "https://script.google.com/macros/s/AKfycbxfHCQLSBWGatkjqJwxPE52qYpsfhg2UIf2JCFx5PKlepzErC0XUVLjLAN-tSuorqq4rQ/exec",
   coursesCount: 4,
   admissions: {
     openDate: "20 April 2026",

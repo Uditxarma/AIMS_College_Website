@@ -78,12 +78,13 @@ const Navbar = () => {
         )}
       >
         <div className="container mx-auto flex items-center justify-between px-4">
-          {/* Logo - bigger and more prominent */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <img src={logo} alt="AIMS Logo" className="w-16 h-16 md:w-20 md:h-20 object-contain shrink-0 drop-shadow-md group-hover:scale-105 transition-transform" />
-            <div className="flex flex-col leading-tight">
-              <span className="font-accent text-foreground text-base font-bold tracking-[0.15em]">AIMS</span>
-              <span className="text-muted-foreground text-[9px] font-body tracking-wider hidden sm:block">MANAGEMENT & SCIENCE</span>
+          {/* Logo - tightly paired with name */}
+          <Link to="/" className="flex items-center gap-1.5 group ml-6">
+            <img src={logo} alt="AIMS Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain shrink-0 drop-shadow-md group-hover:scale-105 transition-transform" />
+            <div className="flex flex-col leading-[1.15]">
+              <span className="font-accent text-foreground text-[15px] md:text-base font-bold tracking-[0.1em] uppercase">AIMS</span>
+              <span className="text-muted-foreground text-[8px] md:text-[9px] font-body tracking-[0.12em] uppercase hidden sm:block">Achiever's Institute of</span>
+              <span className="text-muted-foreground text-[8px] md:text-[9px] font-body tracking-[0.12em] uppercase hidden sm:block">Management & Science</span>
             </div>
           </Link>
 

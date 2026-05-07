@@ -5,24 +5,19 @@ import { Button } from "@/components/ui/button";
 import { BarChart3, Briefcase, Laptop, Wallet, FlaskConical, GraduationCap, ChevronRight, X, Clock, Users, BookOpen } from "lucide-react";
 
 const departments = [
-  { id: "management", label: "Management" },
-  { id: "science", label: "Science & Tech" },
-  { id: "commerce", label: "Commerce" },
+  { id: "undergraduate", label: "Undergraduate" },
+  { id: "diploma", label: "Diploma" },
 ];
 
 const allCourses = [
-  { dept: "management", name: "MBA", full: "Master of Business Administration", icon: BarChart3, duration: "2 Years", eligibility: "Graduation with 50%", seats: 120, desc: "Comprehensive management program with specializations in Finance, Marketing, HR, and Operations." },
-  { dept: "management", name: "BBA", full: "Bachelor of Business Administration", icon: Briefcase, duration: "3 Years", eligibility: "12th with 50%", seats: 180, desc: "Foundation in business management with emphasis on entrepreneurship and leadership." },
-  { dept: "science", name: "BCA", full: "Bachelor of Computer Applications", icon: Laptop, duration: "3 Years", eligibility: "12th with Maths", seats: 120, desc: "Cutting-edge program in software development, databases, and emerging technologies." },
-  { dept: "science", name: "B.Sc IT", full: "Bachelor of Science in IT", icon: Laptop, duration: "3 Years", eligibility: "12th Science", seats: 90, desc: "Focus on information technology, networking, and system administration." },
-  { dept: "science", name: "M.Sc CS", full: "Master of Science in Computer Science", icon: GraduationCap, duration: "2 Years", eligibility: "B.Sc/BCA", seats: 60, desc: "Advanced study in algorithms, AI, machine learning, and data science." },
-  { dept: "commerce", name: "B.Com", full: "Bachelor of Commerce", icon: Wallet, duration: "3 Years", eligibility: "12th Commerce", seats: 240, desc: "Strong foundation in accounting, taxation, finance, and business law." },
-  { dept: "commerce", name: "B.Com Hons", full: "B.Com Honours", icon: Wallet, duration: "3 Years", eligibility: "12th with 60%", seats: 60, desc: "Intensive commerce program with research emphasis and industry projects." },
-  { dept: "science", name: "B.Sc", full: "Bachelor of Science", icon: FlaskConical, duration: "3 Years", eligibility: "12th Science", seats: 120, desc: "Foundational sciences with practical lab experience and research opportunities." },
+  { dept: "undergraduate", name: "B.A", full: "Bachelor of Arts", icon: BookOpen, duration: "3 Years", eligibility: "12th Pass", seats: 120, desc: "Comprehensive program with specializations in Hindi, English, Sanskrit, Sociology, History, and Economics.", scope: ["Civil Services", "Teaching", "Media", "Higher Studies (M.A./LLB)"], specializations: ["Hindi", "English", "Sanskrit", "Sociology", "History", "Economics"] },
+  { dept: "undergraduate", name: "B.Com", full: "Bachelor of Commerce", icon: Wallet, duration: "3 Years", eligibility: "12th Commerce", seats: 120, desc: "Strong foundation in accounting, taxation, finance, and business law for corporate and banking careers.", scope: ["Finance", "Banking", "Accounting", "Corporate Careers"], specializations: [] },
+  { dept: "diploma", name: "Diploma in Hotel Management", full: "Diploma in Hotel Management", icon: Briefcase, duration: "1 Year", eligibility: "12th Pass", seats: 60, desc: "Core skills for the hospitality industry including food production, F&B service, and hotel operations.", scope: ["Hospitality Operations", "Hotels & Events", "Entrepreneurship"], specializations: [] },
+  { dept: "diploma", name: "Diploma in Fashion Designing", full: "Diploma in Fashion Designing", icon: Laptop, duration: "1 Year", eligibility: "12th Pass", seats: 60, desc: "Creativity training in garment construction, fashion illustration, textile science, and personal styling.", scope: ["Designer Job", "Boutique / Own Brand", "Styling & Garment Industry", "Further Fashion Studies"], specializations: [] },
 ];
 
 const CoursesPage = () => {
-  const [activeDept, setActiveDept] = useState("management");
+  const [activeDept, setActiveDept] = useState("undergraduate");
   const [selectedCourse, setSelectedCourse] = useState<typeof allCourses[0] | null>(null);
 
   const filtered = allCourses.filter((c) => c.dept === activeDept);
@@ -92,7 +87,27 @@ const CoursesPage = () => {
             <selectedCourse.icon className="text-secondary mb-4" size={36} />
             <h3 className="font-display text-2xl font-bold text-foreground mb-1">{selectedCourse.name}</h3>
             <p className="text-secondary font-body text-sm mb-4">{selectedCourse.full}</p>
-            <p className="text-muted-foreground font-body mb-6">{selectedCourse.desc}</p>
+            <p className="text-muted-foreground font-body mb-4">{selectedCourse.desc}</p>
+            {selectedCourse.specializations && selectedCourse.specializations.length > 0 && (
+              <div className="mb-4">
+                <p className="font-body text-xs font-semibold text-secondary uppercase tracking-wide mb-2">Specializations</p>
+                <div className="flex flex-wrap gap-2">
+                  {selectedCourse.specializations.map((s) => (
+                    <span key={s} className="bg-secondary/10 text-secondary text-xs font-body px-3 py-1 rounded-full">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {selectedCourse.scope && selectedCourse.scope.length > 0 && (
+              <div className="mb-4">
+                <p className="font-body text-xs font-semibold text-secondary uppercase tracking-wide mb-2">Career Scope</p>
+                <div className="flex flex-wrap gap-2">
+                  {selectedCourse.scope.map((sc) => (
+                    <span key={sc} className="bg-muted text-foreground text-xs font-body px-3 py-1 rounded-full border border-border">{sc}</span>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="grid grid-cols-3 gap-4 mb-6">
               <div className="text-center p-3 bg-muted rounded-lg">
                 <Clock className="text-secondary mx-auto mb-1" size={18} />

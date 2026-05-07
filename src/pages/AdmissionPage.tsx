@@ -170,10 +170,10 @@ const AdmissionPage = () => {
                   disabled={loading}
                 >
                   <option value="">Select Course</option>
-                  <option value="BBA">BBA</option>
-                  <option value="BCA">BCA</option>
-                  <option value="B.Com">B.Com</option>
-                  <option value="B.Sc">B.Sc</option>
+                  <option value="B.A">B.A (Bachelor of Arts)</option>
+                  <option value="B.Com">B.Com (Bachelor of Commerce)</option>
+                  <option value="Diploma in Hotel Management">Diploma in Hotel Management</option>
+                  <option value="Diploma in Fashion Designing">Diploma in Fashion Designing</option>
                 </select>
                 <textarea
                   name="message"

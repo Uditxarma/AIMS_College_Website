@@ -2,21 +2,30 @@ import { useState } from "react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { X } from "lucide-react";
 
+import sports1 from "@/assets/sports/Sports_ (1).jpeg";
+import sports2 from "@/assets/sports/Sports_ (2).jpeg";
+import sports3 from "@/assets/sports/Sports_ (3).jpeg";
+import udaan1 from "@/assets/fest_collection/Udaan_ (1).jpeg";
+import udaan2 from "@/assets/fest_collection/Udaan_ (2).jpeg";
+import udaan3 from "@/assets/fest_collection/Udaan_ (3).jpeg";
+import achievements1 from "@/assets/fest_collection/awards_1.jpeg";
+import achievements2 from "@/assets/fest_collection/awards_2.jpeg";
+
 const categories = ["All", "Events", "Campus", "Achievements", "Sports"];
 
 const photos = [
-  { cat: "Events", label: "Annual Day", img: "Annual+Day" },
-  { cat: "Campus", label: "Main Building", img: "Main+Building" },
-  { cat: "Achievements", label: "Award Ceremony", img: "Awards" },
-  { cat: "Sports", label: "Cricket Tournament", img: "Cricket" },
-  { cat: "Events", label: "Tech Fest", img: "Tech+Fest" },
-  { cat: "Campus", label: "Library", img: "Library" },
-  { cat: "Achievements", label: "Topper Felicitation", img: "Toppers" },
-  { cat: "Sports", label: "Sports Day", img: "Sports+Day" },
-  { cat: "Events", label: "Cultural Night", img: "Cultural" },
-  { cat: "Campus", label: "Cafeteria", img: "Cafeteria" },
-  { cat: "Events", label: "Convocation", img: "Convocation" },
-  { cat: "Sports", label: "Basketball", img: "Basketball" },
+  { cat: "Events", label: "Annual Fest Udaan", img: udaan1 },
+  { cat: "Campus", label: "Main Building", img: "https://placehold.co/400x300/0A1628/C9A84C?text=Main+Building" },
+  { cat: "Achievements", label: "Award Ceremony", img: achievements1 },
+  { cat: "Sports", label: "Cricket Tournament", img: sports1 },
+  { cat: "Events", label: "Udaan Celebration", img: udaan2 },
+  { cat: "Campus", label: "Library", img: "https://placehold.co/400x300/0A1628/C9A84C?text=Library" },
+  { cat: "Achievements", label: "Topper Felicitation", img: achievements2 },
+  { cat: "Sports", label: "Badminton", img: sports2 },
+  { cat: "Events", label: "Udaan Night", img: udaan3 },
+  { cat: "Campus", label: "Cafeteria", img: "https://placehold.co/400x300/0A1628/C9A84C?text=Cafeteria" },
+  { cat: "Events", label: "Convocation", img: "https://placehold.co/400x300/0A1628/C9A84C?text=Convocation" },
+  { cat: "Sports", label: "Cricket", img: sports3 },
 ];
 
 const GalleryPage = () => {
@@ -41,9 +50,8 @@ const GalleryPage = () => {
               <button
                 key={c}
                 onClick={() => setFilter(c)}
-                className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${
-                  filter === c ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-secondary/10"
-                }`}
+                className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${filter === c ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-secondary/10"
+                  }`}
               >
                 {c}
               </button>
@@ -55,9 +63,9 @@ const GalleryPage = () => {
               <ScrollReveal key={`${p.img}-${i}`} delay={i * 50}>
                 <div
                   className="rounded-xl overflow-hidden cursor-pointer group relative"
-                  onClick={() => setLightbox(`https://placehold.co/800x600/0A1628/C9A84C?text=${p.img}`)}
+                  onClick={() => setLightbox(p.img)}
                 >
-                  <img src={`https://placehold.co/400x300/0A1628/C9A84C?text=${p.img}`} alt={p.label} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={p.img} alt={p.label} className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-all duration-300 flex items-end p-4">
                     <span className="text-primary-foreground font-body text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">{p.label}</span>
                   </div>

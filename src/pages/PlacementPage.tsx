@@ -11,9 +11,9 @@ const placementStats = [
 ];
 
 const stories = [
-  { name: "Arun Mehta", course: "MBA 2023", company: "Deloitte", text: "The placement cell's guidance was instrumental in landing my dream offer.", img: "Student+1" },
-  { name: "Sneha Gupta", course: "BCA 2022", company: "Infosys", text: "Mock interviews and industry visits prepared me for the real world.", img: "Student+2" },
-  { name: "Vikram Singh", course: "B.Com 2023", company: "KPMG", text: "AIMS gave me the confidence and skills to compete at the highest level.", img: "Student+3" },
+  { name: "Arun Mehta", course: "Diploma in HOTEL MANAGEMENT 2026", company: "Regenta Hotel", text: "Best college for hotel management.", img: "Student+1" },
+  { name: "Sneha Gupta", course: "B.A 2026", company: "Delloite", text: "Mock interviews and industry visits prepared me for the real world.", img: "Student+2" },
+  { name: "Vikram Singh", course: "B.Com 2026", company: "KPMG", text: "AIMS gave me the confidence and skills to compete at the highest level.", img: "Student+3" },
 ];
 
 const PlacementPage = () => (

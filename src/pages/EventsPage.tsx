@@ -2,15 +2,18 @@ import { useState } from "react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { Calendar, ChevronRight } from "lucide-react";
 
+import udaan1 from "@/assets/fest_collection/Udaan_ (121).jpeg";
+import sports1 from "@/assets/sports/Sports_ (1).jpeg";
+
 const categories = ["All", "Events", "News", "Workshops"];
 
 const events = [
-  { cat: "Events", date: "Mar 15, 2025", title: "Annual Tech Fest 'Innovate 2025'", desc: "Three days of innovation, coding competitions, and industry talks.", img: "Tech+Fest" },
-  { cat: "News", date: "Mar 5, 2025", title: "AIMS Signs MoU with Global Corp", desc: "New internship pipeline opens for management students.", img: "MoU+Signing" },
-  { cat: "Workshops", date: "Feb 28, 2025", title: "AI & Business Workshop", desc: "Hands-on workshop on AI applications in modern business.", img: "AI+Workshop" },
-  { cat: "Events", date: "Feb 20, 2025", title: "National Sports Meet", desc: "Inter-college sports championship with 30+ participating colleges.", img: "Sports+Meet" },
-  { cat: "News", date: "Feb 10, 2025", title: "AIMS Ranked Top 10 in State", desc: "Recognized for academic excellence and placement record.", img: "Ranking" },
-  { cat: "Events", date: "Jan 26, 2025", title: "Republic Day Celebration", desc: "Cultural performances and flag hoisting ceremony.", img: "Republic+Day" },
+  { cat: "Events", date: "May 1, 2026", title: "Annual Fest 'Udaan'", desc: "Three days of innovation, coding competitions, and industry talks.", img: udaan1 },
+  { cat: "News", date: "Mar 5, 2026", title: "AIMS Signs MoU with Global Corp", desc: "New internship pipeline opens for management students.", img: "https://placehold.co/400x200/0A1628/C9A84C?text=MoU+Signing" },
+  { cat: "Workshops", date: "Feb 28, 2026", title: "AI & Business Workshop", desc: "Hands-on workshop on AI applications in modern business.", img: "https://placehold.co/400x200/0A1628/C9A84C?text=AI+Workshop" },
+  { cat: "Events", date: "April 30, 2026", title: "National Sports Meet", desc: "Inter-college sports championship with 30+ participating colleges.", img: sports1 },
+  { cat: "News", date: "Dec 26, 2026", title: "AIMS Ranked Top 10 in State", desc: "Recognized for academic excellence and placement record.", img: "https://placehold.co/400x200/0A1628/C9A84C?text=Ranking" },
+  { cat: "Events", date: "Jan 26, 2026", title: "Republic Day Celebration", desc: "Cultural performances and flag hoisting ceremony.", img: "https://placehold.co/400x200/0A1628/C9A84C?text=Republic+Day" },
 ];
 
 const EventsPage = () => {
@@ -33,9 +36,8 @@ const EventsPage = () => {
               <button
                 key={c}
                 onClick={() => setFilter(c)}
-                className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${
-                  filter === c ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-secondary/10"
-                }`}
+                className={`px-5 py-2 rounded-full font-body text-sm transition-all duration-300 ${filter === c ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-secondary/10"
+                  }`}
               >
                 {c}
               </button>
@@ -47,7 +49,7 @@ const EventsPage = () => {
               <ScrollReveal key={i} delay={i * 100}>
                 <div className="bg-card rounded-xl overflow-hidden shadow-sm border border-border hover:shadow-lg transition-all duration-300 card-gold-border group h-full flex flex-col">
                   <div className="h-48 relative">
-                    <img src={`https://placehold.co/400x200/0A1628/C9A84C?text=${e.img}`} alt={e.title} className="w-full h-full object-cover" />
+                    <img src={e.img} alt={e.title} className="w-full h-full object-cover" />
                     <div className="absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-body font-semibold flex items-center gap-1">
                       <Calendar size={12} /> {e.date}
                     </div>

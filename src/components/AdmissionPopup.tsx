@@ -39,7 +39,7 @@ const AdmissionPopup = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (!validatePhone(formData.phone)) {
       setStatus("error");
       setErrorMessage("Enter a valid 10-digit Indian number.");
@@ -87,7 +87,7 @@ const AdmissionPopup = () => {
 
         <div className="text-center mb-6">
           <span className="font-accent text-secondary text-xs tracking-[0.3em] uppercase">Limited Seats</span>
-          <h3 className="font-display text-2xl font-bold text-primary-foreground mt-2">Admissions Open 2025–26</h3>
+          <h3 className="font-display text-2xl font-bold text-primary-foreground mt-2">Admissions Open 2026–27</h3>
           <p className="text-primary-foreground/60 text-sm font-body mt-2">
             {site.announcement}. Apply before {site.admissions.lastDate}.
           </p>
@@ -124,15 +124,15 @@ const AdmissionPopup = () => {
             disabled={loading}
             className="w-full px-4 py-3 rounded-lg bg-primary-foreground/5 border border-secondary/20 text-primary-foreground placeholder:text-primary-foreground/30 font-body text-sm focus:outline-none focus:border-secondary transition-colors"
           />
-          
+
           {status === "error" && (
             <p className="text-red-400 text-xs font-body text-center">{errorMessage}</p>
           )}
 
-          <Button 
-            variant="gold" 
-            className="w-full" 
-            size="lg" 
+          <Button
+            variant="gold"
+            className="w-full"
+            size="lg"
             type="submit"
             disabled={loading || status === "success"}
           >

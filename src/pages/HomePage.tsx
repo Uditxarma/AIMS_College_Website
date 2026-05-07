@@ -18,29 +18,31 @@ const stats = [
 ];
 
 const courses = [
-  { name: "BBA", desc: "Bachelor of Business Administration", icon: Briefcase, duration: "3 Years" },
-  { name: "BCA", desc: "Bachelor of Computer Applications", icon: Laptop, duration: "3 Years" },
+  { name: "B.A", desc: "Bachelor of Arts", icon: Briefcase, duration: "3 Years" },
+  { name: "Hotel Management", desc: "Diploma in Hotel Management", icon: Laptop, duration: "1 Year" },
   { name: "B.Com", desc: "Bachelor of Commerce", icon: Wallet, duration: "3 Years" },
-  { name: "B.Sc", desc: "Bachelor of Science", icon: FlaskConical, duration: "3 Years" },
+  { name: "Fashion Designing", desc: "Diploma in Fashion Designing", icon: FlaskConical, duration: "1 Year" },
 ];
 
 const whyChoose = [
-  { icon: Users, title: "Practical Education", desc: "Skill-based learning focused on real-world employability." },
-  { icon: Building2, title: "Modern Campus", desc: "Well-equipped labs, library, and smart classrooms in Dehradun." },
-  { icon: Globe, title: "Global Outlook", desc: "Curriculum designed to prepare you for global opportunities." },
-  { icon: Award, title: "Scholarships", desc: "Up to 25% tuition fee waiver for eligible students." },
+  { icon: BookOpen, title: "Industry-guided Curriculum", desc: "Programs designed in consultation with industry experts to ensure career-ready skills." },
+  { icon: Users, title: "Small Class Sizes", desc: "Personal attention and mentorship with small batch sizes for focused learning." },
+  { icon: Briefcase, title: "Live Projects & Internship Exposure", desc: "Hands-on experience through live projects and internships with top organisations." },
+  { icon: Award, title: "Ethics-driven Education", desc: "Career mentoring rooted in values, integrity, and responsible leadership." },
 ];
 
 const testimonials = [
-  { name: "Priya Sharma", course: "MBA 2023", text: "AIMS transformed my career trajectory. The industry exposure and faculty mentorship were unmatched.", rating: 5 },
-  { name: "Rahul Verma", course: "BCA 2022", text: "The tech labs and placement cell helped me land my dream job at a top MNC before graduation.", rating: 5 },
-  { name: "Anjali Patel", course: "B.Com 2024", text: "From the campus culture to placement support, AIMS exceeded all my expectations.", rating: 5 },
+  { name: "Priya Sharma", course: "B.A 2026", text: "AIMS transformed my career trajectory. The industry exposure and faculty mentorship were unmatched.", rating: 5 },
+  { name: "Rahul Verma", course: "Diploma in Hotel Management 2026", text: "The placement cell helped me land my dream job .", rating: 5 },
+  { name: "Anjali Patel", course: "B.Com 2026", text: "From the campus culture to placement support, AIMS exceeded all my expectations.", rating: 5 },
 ];
 
+import udaan1 from "@/assets/fest_collection/Udaan_ (121).jpeg";
+
 const news = [
-  { date: "Mar 10", title: "Annual Tech Fest 'Innovate 2025'", desc: "Three days of innovation, competitions, and industry talks." },
-  { date: "Feb 28", title: "AIMS Signs MoU with Global Corp", desc: "New internship pipeline for management students." },
-  { date: "Feb 15", title: "National Seminar on AI & Business", desc: "Leading researchers and industry experts in attendance." },
+  { date: "Mar 10", title: "Annual Fest 'Udaan'", desc: "Three days of innovation, competitions, and cultural celebrations.", img: udaan1 },
+  { date: "Feb 28", title: "AIMS Signs MoU with Global Corp", desc: "New internship pipeline for management students.", img: "https://placehold.co/100x100/0A1628/C9A84C?text=2" },
+  { date: "Feb 15", title: "National Seminar on AI & Business", desc: "Leading researchers and industry experts in attendance.", img: "https://placehold.co/100x100/0A1628/C9A84C?text=3" },
 ];
 
 const HomePage = () => {
@@ -102,7 +104,7 @@ const HomePage = () => {
               </div>
               <div>
                 <p className="text-primary-foreground font-body text-sm font-semibold">Priya Sharma</p>
-                <p className="text-secondary text-xs font-body">MBA 2023, Now at Deloitte</p>
+                <p className="text-secondary text-xs font-body">B.com 2026, Now at Deloitte</p>
               </div>
             </div>
           </div>
@@ -293,7 +295,7 @@ const HomePage = () => {
               <div className="navy-gradient rounded-2xl p-8 md:p-12 relative overflow-hidden">
                 <div className="absolute inset-0 geo-pattern opacity-20" />
                 <div className="relative z-10">
-                  <span className="font-accent text-secondary text-[10px] tracking-[0.3em] uppercase">Admissions 2025–26</span>
+                  <span className="font-accent text-secondary text-[10px] tracking-[0.3em] uppercase">Admissions 2026–27</span>
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mt-3 mb-4">
                     Your Future <span className="text-secondary italic">Starts Here</span>
                   </h2>
@@ -313,11 +315,11 @@ const HomePage = () => {
 
               <div className="space-y-4">
                 {[
-                  "25% tuition fee waiver scholarship",
-                  "Practical, industry-oriented curriculum",
-                  "Skill-based learning for employability",
-                  "Modern labs, library & Wi-Fi campus",
-                  "Hostel facility for boys & girls",
+                  "Industry-guided curriculum & small class sizes",
+                  "In-campus Training & Placement Cell",
+                  "Udaan Skill Academy — Accounting, Digital Marketing & more",
+                  "Smart classrooms, Library, Computer Labs & Auditorium",
+                  "Transport, Cafeteria & Sports Area on campus",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border hover:border-secondary/20 transition-colors">
                     <CheckCircle2 size={20} className="text-secondary shrink-0" />
@@ -352,7 +354,7 @@ const HomePage = () => {
             <ScrollReveal className="md:col-span-7">
               <div className="bg-card rounded-2xl overflow-hidden border border-border hover:border-secondary/20 transition-all duration-300 group h-full">
                 <div className="h-64 relative overflow-hidden">
-                  <img src="https://placehold.co/700x300/0A1628/C9A84C?text=Tech+Fest+2025" alt={news[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={news[0].img} alt={news[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute top-4 left-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-md text-xs font-body font-semibold flex items-center gap-1">
                     <Calendar size={12} />
                     {news[0].date}
@@ -374,7 +376,7 @@ const HomePage = () => {
                 <ScrollReveal key={i} delay={(i + 1) * 100}>
                   <div className="bg-card rounded-xl p-5 border border-border hover:border-secondary/20 transition-all duration-300 group flex gap-4 h-full">
                     <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0">
-                      <img src={`https://placehold.co/100x100/0A1628/C9A84C?text=${i + 2}`} alt={item.title} className="w-full h-full object-cover" />
+                      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <span className="text-secondary text-[10px] font-body font-semibold flex items-center gap-1 mb-1">
