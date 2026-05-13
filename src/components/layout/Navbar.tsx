@@ -83,8 +83,8 @@ const Navbar = () => {
             <img src={logo} alt="AIMS Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain shrink-0 drop-shadow-md group-hover:scale-105 transition-transform" />
             <div className="flex flex-col leading-[1.15]">
               <span className="font-accent text-foreground text-[15px] md:text-base font-bold tracking-[0.1em] uppercase">AIMS</span>
-              <span className="text-muted-foreground text-[8px] md:text-[9px] font-body tracking-[0.12em] uppercase hidden sm:block">Achiever's Institute of</span>
-              <span className="text-muted-foreground text-[8px] md:text-[9px] font-body tracking-[0.12em] uppercase hidden sm:block">Management & Science</span>
+              <span className="text-muted-foreground text-[8px] md:text-[9px] font-body tracking-[0.12em] uppercase">Achiever's Institute of</span>
+              <span className="text-muted-foreground text-[8px] md:text-[9px] font-body tracking-[0.12em] uppercase">Management & Science</span>
             </div>
           </Link>
 

@@ -1,6 +1,6 @@
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionDivider from "@/components/ui/SectionDivider";
-import { Target, Eye, Award } from "lucide-react";
+import { Target, Eye } from "lucide-react";
 import chairmanImg from "@/assets/chairman.jpeg";
 import mdImg from "@/assets/managing-director.jpeg";
 
@@ -74,27 +74,7 @@ const AboutPage = () => (
       </div>
     </section>
 
-    {/* Accreditations */}
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 text-center">
-        <ScrollReveal>
-          <span className="font-accent text-secondary text-xs tracking-[0.3em] uppercase">Recognition</span>
-          <h2 className="section-heading mt-3 mb-8 gold-underline">Accreditations & Affiliations</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            {["UGC", "AICTE", "Govt. of Uttarakhand", "ISO 9001"].map((name) => (
-              <div key={name} className="w-32 h-28 rounded-xl bg-muted flex items-center justify-center border border-border px-3">
-                <div className="text-center">
-                  <Award className="text-secondary mx-auto mb-1" size={24} />
-                  <span className="font-accent text-xs text-foreground">{name}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-      </div>
-    </section>
 
-    <SectionDivider />
 
     {/* Leadership */}
     <section className="py-20 bg-muted">

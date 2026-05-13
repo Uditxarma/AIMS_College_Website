@@ -6,8 +6,8 @@ import SectionDivider from "@/components/ui/SectionDivider";
 import { site } from "@/config/site";
 import {
   GraduationCap, Users, Award, BookOpen, Building2, Globe,
-  Briefcase, Star, Calendar, ArrowRight, ChevronRight, Play,
-  Laptop, FlaskConical, BarChart3, Wallet, Quote, CheckCircle2
+  Briefcase, Calendar, ArrowRight, ChevronRight, Play,
+  Laptop, FlaskConical, BarChart3, Wallet, CheckCircle2
 } from "lucide-react";
 
 const stats = [
@@ -31,11 +31,7 @@ const whyChoose = [
   { icon: Award, title: "Ethics-driven Education", desc: "Career mentoring rooted in values, integrity, and responsible leadership." },
 ];
 
-const testimonials = [
-  { name: "Priya Sharma", course: "B.A 2026", text: "AIMS transformed my career trajectory. The industry exposure and faculty mentorship were unmatched.", rating: 5 },
-  { name: "Rahul Verma", course: "Diploma in Hotel Management 2026", text: "The placement cell helped me land my dream job .", rating: 5 },
-  { name: "Anjali Patel", course: "B.Com 2026", text: "From the campus culture to placement support, AIMS exceeded all my expectations.", rating: 5 },
-];
+
 
 import udaan1 from "@/assets/fest_collection/Udaan_ (121).jpeg";
 
@@ -93,21 +89,7 @@ const HomePage = () => {
             className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-primary/50" />
-          {/* Floating card */}
-          <div className="absolute bottom-12 left-8 right-8 glass-card rounded-xl p-6">
-            <p className="text-primary-foreground/80 text-sm font-body italic mb-3">
-              "AIMS gave me more than a degree — it gave me direction, purpose, and the confidence to lead."
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                <GraduationCap size={18} className="text-secondary" />
-              </div>
-              <div>
-                <p className="text-primary-foreground font-body text-sm font-semibold">Priya Sharma</p>
-                <p className="text-secondary text-xs font-body">B.com 2026, Now at Deloitte</p>
-              </div>
-            </div>
-          </div>
+
           {/* Play button overlay */}
           <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-secondary/90 flex items-center justify-center hover:bg-secondary transition-colors group">
             <Play size={28} className="text-secondary-foreground ml-1 group-hover:scale-110 transition-transform" />
@@ -221,71 +203,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <SectionDivider />
 
-      {/* TESTIMONIALS - Large featured layout */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <span className="font-accent text-secondary text-[10px] tracking-[0.3em] uppercase">Voices</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
-                What Our <span className="text-secondary italic">Students Say</span>
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          {/* Featured testimonial */}
-          <ScrollReveal>
-            <div className="navy-gradient rounded-2xl p-8 md:p-12 mb-6 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <Quote className="text-secondary/20 mb-4" size={48} />
-              <p className="text-primary-foreground/80 font-display text-xl md:text-2xl italic leading-relaxed max-w-3xl mb-6">
-                "{testimonials[0].text}"
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center">
-                  <span className="font-accent text-secondary-foreground text-sm font-bold">PS</span>
-                </div>
-                <div>
-                  <p className="text-primary-foreground font-body font-semibold">{testimonials[0].name}</p>
-                  <p className="text-secondary text-sm font-body">{testimonials[0].course}</p>
-                </div>
-                <div className="ml-auto flex gap-1">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} size={16} className="text-secondary fill-secondary" />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Other testimonials */}
-          <div className="grid md:grid-cols-2 gap-5">
-            {testimonials.slice(1).map((t, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="bg-card rounded-xl p-6 border border-border hover:border-secondary/20 transition-all duration-300 h-full">
-                  <div className="flex gap-1 mb-3">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} size={14} className="text-secondary fill-secondary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4 italic">"{t.text}"</p>
-                  <div className="flex items-center gap-3 pt-3 border-t border-border">
-                    <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center">
-                      <span className="font-accent text-secondary text-[10px] font-bold">{t.name.split(' ').map(n => n[0]).join('')}</span>
-                    </div>
-                    <div>
-                      <p className="font-body font-semibold text-foreground text-sm">{t.name}</p>
-                      <p className="text-secondary text-xs font-body">{t.course}</p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ADMISSION CTA - Asymmetric */}
       <section className="py-20 bg-background">

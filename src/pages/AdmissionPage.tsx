@@ -2,17 +2,13 @@ import { useState } from "react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionDivider from "@/components/ui/SectionDivider";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Award, ArrowRight, Download, FileText, Calendar, Loader2, Check } from "lucide-react";
+import { Phone, Mail, ArrowRight, Download, FileText, Calendar, Loader2, Check } from "lucide-react";
 import { site } from "@/config/site";
 
 
 const steps = site.admissions.steps;
 
-const scholarships = [
-  { title: "Merit Scholarship", eligibility: "Outstanding academic performance", amount: "Up to 25% tuition waiver" },
-  { title: "Early Bird Offer", eligibility: "Apply before 31 August 2026", amount: "Special concession" },
-  { title: "Need-Based Aid", eligibility: "Eligible candidates from EWS", amount: "Financial support available" },
-];
+
 
 const AdmissionPage = () => {
   const [formData, setFormData] = useState({
@@ -232,30 +228,7 @@ const AdmissionPage = () => {
       </div>
     </section>
 
-    {/* Scholarships */}
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <ScrollReveal>
-          <div className="text-center mb-12">
-            <span className="font-accent text-secondary text-xs tracking-[0.3em] uppercase">Financial Aid</span>
-            <h2 className="section-heading mt-3 gold-underline">Scholarships</h2>
-            <p className="text-muted-foreground font-body mt-4 max-w-xl mx-auto">{site.admissions.scholarship} available for eligible students.</p>
-          </div>
-        </ScrollReveal>
-        <div className="grid md:grid-cols-3 gap-6">
-          {scholarships.map((s, i) => (
-            <ScrollReveal key={i} delay={i * 100}>
-              <div className="bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-lg transition-all duration-300 text-center h-full">
-                <Award className="text-secondary mx-auto mb-3" size={32} />
-                <h3 className="font-display text-lg font-bold text-foreground mb-2">{s.title}</h3>
-                <p className="text-muted-foreground text-sm font-body mb-3">{s.eligibility}</p>
-                <span className="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-body font-semibold">{s.amount}</span>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </div>
-    </section>
+
   </div>
   );
 };
